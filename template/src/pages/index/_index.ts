@@ -1,7 +1,12 @@
 export default {
   data: {},
-  onLoad() {
+  onLoad(): void {
+    console.log('onLoad');
   },
-  onShow() {},
-  onUnload() {},
+  onShow(): void {
+    console.log('onShow');
+  },
+  onUnload(): void {
+    console.log('onUnload');
+  },
 };

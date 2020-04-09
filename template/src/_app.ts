@@ -1,9 +1,9 @@
 export default {
-  onLaunch() {
+  onLaunch(): void {
   },
-  onShow() {
+  onShow(): void {
   },
-  onError(msg) {
+  onError(msg: string): void {
     console.log(msg, ' -----> onError');
   },
   globalData: {

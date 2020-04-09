@@ -152,10 +152,6 @@ module.exports = function() {
       },
     },
     plugins: [
-      new ForkTsCheckerWebpackPlugin({
-        tsconfig: path.resolve(process.cwd(), "./tsconfig.json"),
-        tslint: path.resolve(process.cwd(), "./tslint.yml"),
-      }),
       definePlugin(),
       new FriendlyErrorsPlugin({
         onErrors: (severity, errors) => {
@@ -181,6 +177,10 @@ module.exports = function() {
       ...copyJsonPlugin(entryJsonFiles, codePath),
       ...copyProjectConf,
       new MiniFunctionPlugin(),
+      new ForkTsCheckerWebpackPlugin({
+        tsconfig: path.resolve(process.cwd(), "./tsconfig.json"),
+        eslint: true,
+      }),
     ],
   };
   if (process.env.bundleAnalyzerReport) {
