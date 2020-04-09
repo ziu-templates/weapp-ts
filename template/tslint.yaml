@@ -1,0 +1,12 @@
+extends: "tslint:recommended"
+rules:
+  ordered-imports: false
+  object-literal-sort-keys: false
+  no-console:
+    severity: warning
+    options:
+      - debug
+      - info
+      - time
+      - timeEnd
+      - trace
