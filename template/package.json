@@ -6,10 +6,6 @@
     "private": true,
     "scripts": {
         "start": "npm run dev",
-        {{#lint}}
-        "fix": "npm run lint -- --fix",
-        "lint": "eslint --ext .js src -c .eslintrc.js",
-        {{/lint}}
         "fix:scss": "npm run lint:scss -- --fix",
         "lint:scss": "stylelint src/**/*.scss --config .stylelintrc",
         {{#gitCommitMsg}}
