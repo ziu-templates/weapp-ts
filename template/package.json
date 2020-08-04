@@ -107,7 +107,7 @@
     "dependencies": {
         "@babel/runtime": "^7.3.4",
         "@babel/runtime-corejs2": "^7.5.0",
-        "miniprogram-api-typings": "^2.11.0-1",
-        "miniapp-utils": "^1.1.6"
+        "miniapp-utils": "^1.1.6",
+        "weapp-api-typings": "^1.0.1"
     }
 }
