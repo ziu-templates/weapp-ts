@@ -6,7 +6,6 @@
         "request": 10000
     },
     "window":{
-        "backgroundTextStyle":"light",
         "navigationBarBackgroundColor": "#fff",
         "navigationBarTitleText": "{{ name }}",
         "navigationBarTextStyle":"black"
