@@ -37,6 +37,9 @@ module.exports = {
         tsx: "never",
       },
     ],
+    "@typescript-eslint/interface-name-prefix": {
+      prefixWithI: "always",
+    },
     "@typescript-eslint/no-var-requires": 0,
     "@typescript-eslint/no-explicit-any": 0,
     "@typescript-eslint/no-use-before-define": 0,
