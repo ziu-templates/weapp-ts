@@ -67,7 +67,7 @@ module.exports = {
     // allow multiline strings
     "no-multi-str": 0,
     // enforce 4 space indent
-    indent: ["error", 2],
+    indent: ["error", 2, { SwitchCase: 1 }],
     // undef
     "no-undef": 2,
     // allow variable decalared separately in functions
