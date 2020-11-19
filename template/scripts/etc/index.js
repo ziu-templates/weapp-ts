@@ -22,6 +22,7 @@ module.exports = {
   miniJsSuffix: 'wxs',
   jsSuffix: 'ts',
   globalObject: 'global',
+  autoImportAppConfigPath: "src/outside",
   sourceMap: true,
   development: getPrjConfig({
     UglifyJs: false,

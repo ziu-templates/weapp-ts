@@ -19,6 +19,7 @@ module.exports = function({ compiler, watchFn }) {
       cssSuffix: conf.cssSuffix,
       compileCssSuffix: conf.compileCssSuffix,
       jsSuffix: conf.jsSuffix,
+      autoImportAppConfigPath: conf.autoImportAppConfigPath,
     }),
     hashVal = entryHash(entry);
   scope.jsonWatcher = gulp.watch('src/**/*.json');
@@ -30,6 +31,7 @@ module.exports = function({ compiler, watchFn }) {
     let curHashVal = entryHash(getEntry({
       xmlSuffix: conf.xmlSuffix,
       cssSuffix: conf.compileCssSuffix,
+      autoImportAppConfigPath: conf.autoImportAppConfigPath,
     }).entry);
     if (hashVal === curHashVal) {
       return false;
