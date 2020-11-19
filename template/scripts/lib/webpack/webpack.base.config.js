@@ -209,7 +209,7 @@ module.exports = function() {
 
 function getSubsRoot(subs) {
   if (!Array.isArray(subs)) {
-    return null;
+    return [];
   }
 
   const roots = subs.map((sub) => {
