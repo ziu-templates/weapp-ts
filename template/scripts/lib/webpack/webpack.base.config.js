@@ -63,6 +63,11 @@ module.exports = function() {
         ...miniJsLoader(conf.miniJsSuffix),
         scssLoader(conf.cssSuffix),
         {
+          test: /\.js$/,
+          use: 'babel-loader',
+          exclude: /(node_modules)/,
+        },
+        {
           test: /\.tsx?$/,
           use: [
             {
