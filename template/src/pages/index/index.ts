@@ -1,8 +1,7 @@
 import "./style";
 import PageBase from "../../lib/Base/PageBase";
 
-class Data {
-}
+class Data {}
 
 export default class Index
   extends PageBase<Data>
