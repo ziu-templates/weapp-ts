@@ -150,13 +150,13 @@ module.exports = function() {
                 module.resource &&
                 /\.(js|ts)$/.test(module.resource) &&
                 module.resource.indexOf(
-                  path.join(process.cwd(), 'src')
+                  path.join(process.cwd(), conf.rootSrc)
                 ) === 0);
             },
             name: function(module) {
               const moduleName = module.identifier();
               const result = subsRoot.filter((sub) => {
-                if (moduleName.includes(sub)) {
+                if (path.join(conf.rootSrc, sub).includes(moduleName)) {
                   return true;
                 }
                 return false;

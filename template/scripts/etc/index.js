@@ -15,6 +15,7 @@ function getPrjConfig({
 }
 
 module.exports = {
+  rootSrc: "src",
   compileCssSuffix: 'scss',
   cssSuffix: 'wxss',
   xmlSuffix: 'wxml',
