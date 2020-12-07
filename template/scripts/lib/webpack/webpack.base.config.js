@@ -156,7 +156,7 @@ module.exports = function() {
             name: function(module) {
               const moduleName = module.identifier();
               const result = subsRoot.filter((sub) => {
-                if (path.join(conf.rootSrc, sub).includes(moduleName)) {
+                if (moduleName.includes(path.join(conf.rootSrc, sub))) {
                   return true;
                 }
                 return false;
