@@ -1,4 +1,5 @@
 import "./style";
+import PageBase from "../../lib/Base/PageBase";
 
 class Data {
 }
@@ -14,8 +15,4 @@ export default class Index
   }
 }
 
-const indexOptions = new Index();
-
-Page(indexOptions);
-
-export default indexOptions;
+Page(new Index());
