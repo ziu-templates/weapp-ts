@@ -2,6 +2,11 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 
 export default class PageBase<IData> {
+  /**
+   * 当前页面名称,注意唯一性
+   */
+  componentName = "Base";
+
   data = {};
 
   options = {};
@@ -43,7 +48,7 @@ export default class PageBase<IData> {
       }
       that[key] = obj[key];
     });
-    console.log("serialize time: ", Date.now() - start);
+    console.log(obj.componentName, " serialize time: ", Date.now() - start);
 
     return that;
   }
