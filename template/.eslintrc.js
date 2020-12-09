@@ -50,6 +50,7 @@ module.exports = {
     "no-param-reassign": ["error", { props: false }],
     "linebreak-style": 0,
     "no-use-before-define": 0,
+    "class-methods-use-this": 0,
     "operator-linebreak": [
       2,
       "after",
