@@ -2,9 +2,6 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 
 export default class PageBase<IData> {
-  /**
-   * 当前页面名称,注意唯一性
-   */
   componentName = "Base";
 
   data = {};
@@ -48,7 +45,16 @@ export default class PageBase<IData> {
       }
       that[key] = obj[key];
     });
-    console.log(obj.componentName, " serialize time: ", Date.now() - start);
+
+    try {
+      console.log(
+        obj.constructor.name || obj.componentName,
+        " serialize time: ",
+        Date.now() - start,
+      );
+    } catch (e) {
+      console.log(e);
+    }
 
     return that;
   }
