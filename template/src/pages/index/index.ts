@@ -10,7 +10,7 @@ export default class Index
   data: Data = new Data();
 
   onLoad(): void {
-    console.log("onLoad");
+    console.log("onLoad: ", this);
   }
 }
 
