@@ -2,7 +2,12 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 
 export default class PageBase<IData> {
-  componentName = "Base";
+  /**
+   * 页面名称，注意唯一性
+   */
+  get componentName(): string {
+    return "Base";
+  }
 
   data = {};
 
@@ -48,7 +53,7 @@ export default class PageBase<IData> {
 
     try {
       console.log(
-        obj.constructor.name || obj.componentName,
+        obj.componentName,
         " serialize time: ",
         Date.now() - start,
       );
