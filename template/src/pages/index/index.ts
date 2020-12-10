@@ -1,13 +1,17 @@
 import "./style";
-import PageBase from "../../lib/Base/PageBase";
+import { PageBase } from "mipp";
 
 class Data {}
 
 export default class Index
   extends PageBase<Data>
-  implements Partial<WechatMiniprogram.Page.ILifetime> {
+  implements IMippWe.IPageLifetime {
 
-  data: Data = new Data();
+  data: Data;
+
+  constructor() {
+    this.setData(new Data());
+  }
 
   onLoad(): void {
     console.log("onLoad: ", this);
