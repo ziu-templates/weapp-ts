@@ -9,7 +9,7 @@
         "fix:scss": "npm run lint:scss -- --fix",
         "lint": "eslint --ext .ts --ext .tsx src -c .eslintrc.js",
         "lint:scss": "stylelint src/**/*.scss --config .stylelintrc",
-        "api": "mipp-api src/**/*/apiList.ts -o src/typings/Api/index.d.ts"
+        "api": "mipp-api src/**/*/apiList.ts -o src/typings/Api/index.d.ts",
         {{#gitCommitMsg}}
         "husky": "node node_modules/husky/lib/installer/bin install",
         "unhusky": "node node_modules/husky/lib/installer/bin uninstall",
