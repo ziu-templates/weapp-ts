@@ -3,7 +3,7 @@ import { PageBase } from "mipp";
 
 export default class Index
   extends PageBase<IIndexData>
-  implements IMippWe.IPageLifetime {
+  implements IMippWePage.ILifetime {
 
   data: IIndexData = {
     welcomeStr: "Index Page",
