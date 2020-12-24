@@ -1,17 +1,13 @@
 import "./style";
 import { PageBase } from "mipp";
 
-class Data {}
-
 export default class Index
-  extends PageBase<Data>
+  extends PageBase<IIndexData>
   implements IMippWe.IPageLifetime {
 
-  data: Data;
-
-  constructor() {
-    this.setData(new Data());
-  }
+  data: IIndexData = {
+    welcomeStr: "Index Page",
+  };
 
   onLoad(): void {
     console.log("onLoad: ", this);
