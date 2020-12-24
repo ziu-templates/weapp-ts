@@ -61,7 +61,6 @@ module.exports = {
         },
       },
     ],
-    "class-methods-use-this": 0,
     // not require constant expressions in conditions
     "no-constant-condition": 0,
     // not require === and !===
