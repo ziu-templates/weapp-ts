@@ -3,8 +3,6 @@
  */
 import { updateApp } from 'miniapp-utils';
 
-updateApp();
-
 class AppOption implements IMippWeApp.ILifetime {
   static getApp(opts?: IMippWeCommon.IGetAppOption): AppOption {
     return getApp<AppOption>(opts);
@@ -32,3 +30,5 @@ class AppOption implements IMippWeApp.ILifetime {
 export default AppOption;
 
 App(new AppOption());
+
+updateApp();
