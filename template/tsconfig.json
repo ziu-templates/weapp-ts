@@ -2,8 +2,11 @@
   "compilerOptions": {
     "baseUrl": ".",
     "lib": [
-      "es6",
-      "es7"
+      "ES6",
+      "ES7",
+      "ES2016",
+      "ES2017",
+      "ESNext"
     ],
     "outDir": "./dist/",
     "sourceMap": true,
@@ -12,6 +15,7 @@
     "allowJs": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
+    "noImplicitThis": true,
     "incremental": true
   },
   "exclude": [
