@@ -43,5 +43,19 @@ module.exports = function(suffix) {
         },
       },
     ],
+    exclude: /(node_modules)/,
+  }, {
+    test: reg,
+    use: [
+      {
+        loader: 'mini-js-loader',
+        options: {
+          filename: `[name].${suffix}`,
+          minimize: envComp('production'),
+          undefinedToVoid,
+        },
+      },
+    ],
+    exclude: /(src)/,
   }] : [];
 };
