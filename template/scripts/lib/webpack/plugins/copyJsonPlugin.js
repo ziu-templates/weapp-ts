@@ -1,9 +1,9 @@
-const path = require('path'),
+const path = require("path"),
   { getAppJson } = require("miniapp-auto-webpack-plugin"),
-  CopyWebpackPlugin = require('copy-webpack-plugin'),
+  CopyWebpackPlugin = require("copy-webpack-plugin"),
   conf = require("../../../etc/index");
 
-module.exports = function(entryJsonFiles, codePath) {
+module.exports = function (entryJsonFiles, codePath) {
   if (!entryJsonFiles) {
     return [];
   }
@@ -22,13 +22,28 @@ module.exports = function(entryJsonFiles, codePath) {
         },
       };
     }
+
     return {
       context: process.cwd(),
       from: pathurl[0],
       to: path.join(codePath, `${page}.json`),
+      transform(content) {
+        try {
+          const jsonData = JSON.parse(content.toString());
+          if (!jsonData || !jsonData.usingComponents) {
+            return content;
+          }
+          const tmp = {};
+          Object.entries(jsonData.usingComponents).forEach(([componentName, pathurl]) => {
+            tmp[componentName] = entryJsonFiles[pathurl][0].includes("node_modules") ? `/${pathurl}` : pathurl;
+          });
+          jsonData.usingComponents = tmp;
+          return JSON.stringify(jsonData);
+        } catch (e) {
+          return content;
+        }
+      },
     };
   });
-  return [new CopyWebpackPlugin([
-    ...entryJson
-  ])];
+  return [new CopyWebpackPlugin([...entryJson])];
 };
