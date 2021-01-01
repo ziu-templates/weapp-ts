@@ -36,6 +36,7 @@ module.exports = function (entryJsonFiles, codePath) {
           const tmp = {};
           Object.entries(jsonData.usingComponents).forEach(([componentName, pathurl]) => {
             if (!entryJsonFiles[pathurl] || entryJsonFiles[pathurl].length === 0) {
+              tmp[componentName] = pathurl;
               return;
             }
             tmp[componentName] = entryJsonFiles[pathurl][0].includes("node_modules") ? `/${pathurl}` : pathurl;
