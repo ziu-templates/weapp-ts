@@ -137,7 +137,13 @@ module.exports = function() {
             minChunks: 2,
           },
           vendor: {
-            test: /[\\/]node_modules[\\/]/,
+            test: function (module) {
+              return (
+                module.resource &&
+                /[\\/]node_modules[\\/]/.test(module.resource) &&
+                !new RegExp(`\.${conf.compileCssSuffix}$`).test(module.resource)
+              );
+            },
             name: 'commons/vendor',
             chunks: 'initial',
             minSize: 0,
