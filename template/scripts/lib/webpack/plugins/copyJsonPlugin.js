@@ -35,7 +35,6 @@ module.exports = function (entryJsonFiles, codePath) {
           }
           const tmp = {};
           Object.entries(jsonData.usingComponents).forEach(([componentName, pathurl]) => {
-            console.log(entryJsonFiles[pathurl]);
             if (!entryJsonFiles[pathurl] || entryJsonFiles[pathurl].length === 0) {
               return;
             }
