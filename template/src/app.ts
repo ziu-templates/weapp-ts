@@ -14,6 +14,10 @@ class AppOption implements IMippWeApp.ILifetime {
     console.log("onLaunch: ", opts);
   }
 
+  onShow(): void {
+    updateApp();
+  }
+
   onError(msg: string): void {
     console.log("onError: ", msg);
   }
@@ -30,5 +34,3 @@ class AppOption implements IMippWeApp.ILifetime {
 export default AppOption;
 
 App(new AppOption());
-
-updateApp();
