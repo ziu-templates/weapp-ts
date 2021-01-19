@@ -9,6 +9,7 @@ module.exports = {
     nodeModules: true,
     autoAudits: false,
     uglifyFileName: false,
-    checkInvalidKey: true
+    checkInvalidKey: true,
+    enhance: true
   }
 };
