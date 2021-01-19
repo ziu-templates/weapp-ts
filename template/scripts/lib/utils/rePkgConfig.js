@@ -10,12 +10,26 @@ module.exports = function(content = '{}') {
   } catch (e) {
     console.error(e);
   }
-  if (prjEnvComp('development')) {
-    return content;
-  }
   let pkgConf = '';
+  if (prjEnvComp('development')) {
+    try {
+      pkgConf = JSON.parse(content);
+    } catch (e) {
+      throw e;
+    }
+    if (pkgConf.projectname.includes(process.env.PRJ_ENV)) {
+      return JSON.stringify(pkgConf);
+    }
+    pkgConf.projectname = `${process.env.PRJ_ENV}-${pkgConf.projectname}`;
+    return JSON.stringify(pkgConf);
+  }
   try {
-    pkgConf = JSON.stringify(merge(JSON.parse(content), distPkg));
+    pkgConf = merge(JSON.parse(content), distPkg);
+    if (pkgConf.projectname.includes(process.env.PRJ_ENV)) {
+      return JSON.stringify(pkgConf);
+    }
+    pkgConf.projectname = `${process.env.PRJ_ENV}-${pkgConf.projectname.replace("development-", "")}`;
+    pkgConf = JSON.stringify(pkgConf);
   } catch (e) {
     throw e;
   }
